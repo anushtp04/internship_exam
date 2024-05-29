@@ -1,6 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:internship_question/screens/homepage/response/homepage.dart';
-import 'package:internship_question/screens/login/response/desktop_login.dart';
+import 'package:internship_question/screens/homepage/view_homepage.dart';
 import 'package:internship_question/screens/login/view_login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -32,7 +31,7 @@ final router = GoRouter(
       GoRoute(
         path: "/home",
         name: "home",
-        builder: (context, state) => HomePage(),
+        builder: (context, state) => HomePageView(),
       ),
     ]);
 

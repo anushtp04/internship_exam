@@ -11,14 +11,14 @@ class LoginController extends GetxController {
   final passwordController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey();
   var isLoading = true.obs;
-  var id = "".obs;
+  var loginId = "".obs;
 
 
   loginData() async {
     var data = await LoginDataService().getData(emailController.text, passwordController.text);
-    id.value = data;
-    storeData(id.value);
-    if(id.value.isNotEmpty){
+    loginId.value = data;
+    storeLoginId(loginId.value);
+    if(loginId.value.isNotEmpty){
       navigationkey.currentContext!.go("/home");
     }
     else{
@@ -27,15 +27,16 @@ class LoginController extends GetxController {
 
   }
 
-  storeData(String tockenData) async {
+  storeLoginId(String loginId) async {
     final sharedPref = await SharedPreferences.getInstance();
-    await sharedPref.setString("loginId", tockenData);
+    await sharedPref.setString("loginId", loginId);
 
   }
 
-  removeTocken() async {
+  removeLoginId() async {
     final sharedPref = await SharedPreferences.getInstance();
     sharedPref.remove("loginId");
-    id.value = "";
+    loginId.value = "";
+    navigationkey.currentState?.context.go("/login");
   }
 }

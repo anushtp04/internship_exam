@@ -4,7 +4,9 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 import 'go_router/go_router_widget.dart';
+import 'model/list_model.dart';
 
+var dataList = <ListModel>[].obs;
 var indexChange = 0.obs;
 
 void main() {

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:internship_question/screens/homepage/service/homepage_service.dart';
 
+import '../../../main.dart';
 import '../../../model/list_model.dart';
 
 class HomePageController extends GetxController {
-  var dataList = <ListModel>[].obs;
   var isLoading = true.obs;
   final nameController = TextEditingController();
   final roleController = TextEditingController();
@@ -46,6 +46,8 @@ class HomePageController extends GetxController {
       print(e.toString());
     }
   }
+  
+
 
 
   @override
